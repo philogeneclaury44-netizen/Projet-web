@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --primary: #7b3547;
+  --primary-foreground: #fffaf1;
+  --background: #f8f4ec;
+  --foreground: #2f2925;
+  --card: #fffdf8;
+  --card-foreground: #2f2925;
+  --popover: #fffdf8;
+  --popover-foreground: #2f2925;
+  --secondary: #eee6d9;
+  --secondary-foreground: #544a42;
+  --muted: #eee8de;
+  --muted-foreground: #776d63;
+  --accent: #f0d5c2;
+  --accent-foreground: #61372d;
+  --destructive: #b33d3d;
+  --destructive-foreground: #fffaf1;
+  --border: #e5dccd;
+  --input: #ddd2c2;
+  --ring: #c46b4b;
+  --sidebar: #2f2925;
+  --sidebar-foreground: #f8f4ec;
+  --sidebar-primary: #efb08d;
+  --sidebar-primary-foreground: #2f2925;
+  --sidebar-accent: #443934;
+  --sidebar-accent-foreground: #fffaf1;
+  --sidebar-border: #544841;
+  --sidebar-ring: #efb08d;
+  --radius: 0.8rem;
+}
+
+.dark {
+  --background: #2f2925;
+  --foreground: #f8f4ec;
+  --card: #3a312c;
+  --card-foreground: #f8f4ec;
+  --popover: #3a312c;
+  --popover-foreground: #f8f4ec;
+  --secondary: #4a3e37;
+  --secondary-foreground: #f8f4ec;
+  --muted: #4a3e37;
+  --muted-foreground: #c7bcb1;
+  --accent: #624737;
+  --accent-foreground: #fffaf1;
+  --border: #5c4d44;
+  --input: #5c4d44;
+  --sidebar: #1e1a18;
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground antialiased; font-family: "DM Sans", sans-serif; }
+  button:not(:disabled), [role="button"]:not([aria-disabled="true"]), [type="button"]:not(:disabled), [type="submit"]:not(:disabled), a[href], select:not(:disabled) { @apply cursor-pointer; }
+}
+
+@layer components {
+  .container { width: 100%; margin-inline: auto; padding-inline: 1.25rem; }
+  @media (min-width: 640px) { .container { padding-inline: 2rem; } }
+  @media (min-width: 1024px) { .container { max-width: 1240px; padding-inline: 2.5rem; } }
+  .font-display { font-family: "DM Serif Display", Georgia, serif; }
+  .eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+  .paper-grid { background-image: linear-gradient(rgba(123,53,71,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(123,53,71,.04) 1px, transparent 1px); background-size: 32px 32px; }
+  .book-shadow { box-shadow: 12px 18px 0 rgba(57, 40, 32, 0.08), 0 12px 30px rgba(57, 40, 32, 0.13); }
+  .soft-shadow { box-shadow: 0 10px 34px rgba(57, 40, 32, 0.08); }
+  .cover-lines { background-image: linear-gradient(140deg, rgba(255,255,255,.18) 0 2px, transparent 2px 13px); background-size: 15px 15px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-up { animation: revealUp .6s cubic-bezier(.23,1,.32,1) both; }
+  .float-slow { animation: floatSlow 6s ease-in-out infinite; }
+  @keyframes revealUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes floatSlow { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-8px) rotate(-1deg); } }
+}

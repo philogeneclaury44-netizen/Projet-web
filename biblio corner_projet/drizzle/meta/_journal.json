@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1790013321951,
+      "tag": "0000_wild_felicia_hardy",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1790013424220,
+      "tag": "0001_open_magma",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1790014627292,
+      "tag": "0002_cheerful_human_robot",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1790015214926,
+      "tag": "0003_famous_layla_miller",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1790015386076,
+      "tag": "0004_slim_pandemic",
+      "breakpoints": true
+    }
+  ]
+}
